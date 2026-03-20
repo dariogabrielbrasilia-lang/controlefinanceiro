@@ -2284,6 +2284,25 @@ function exportData() {
     if (e.key === 'Enter') document.getElementById('login-pass').focus();
   });
 })();
-</script>
+</script><script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js";
+  import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-auth.js";
+  import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyDciJo8T4AO-j8yljFTv-j0KqsjY7T9O-0",
+    authDomain: "controle-dario.firebaseapp.com",
+    projectId: "controle-dario",
+    storageBucket: "controle-dario.firebasestorage.app",
+    messagingSenderId: "395304595859",
+    appId: "1:395304595859:web:1d95cb5d8f9699c7c93866"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const db = getFirestore(app);
+
+  console.log("Firebase conectado!");
+</script> 
 </body>
 </html>
